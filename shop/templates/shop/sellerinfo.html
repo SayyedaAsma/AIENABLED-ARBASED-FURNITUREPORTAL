@@ -1,0 +1,63 @@
+{% extends 'shop/basic.html' %}
+{% load static %}
+{% block title %} Title of admin{% endblock %}
+{% block additionalStyles %}
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css"/>
+    <style type="text/css">
+          .container{
+            border:white;
+            margin-top: 50px ;
+            margin-bottom: 50px ;
+          }
+    </style>
+
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Seller Id</th>
+                    <th>Name</th>
+                    <th>Email </th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                  
+
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in data%}
+                <tr>
+                    <td>{{result.s_ID}}</td>
+                    <td>{{result.s_name}}</td>
+                    <td>{{result.s_email}}</td>
+                    <td>{{result.s_address}}</td>
+                    <td>{{result.s_phoneNumber}}</td>
+                    <!--<td>{{result.s_passwords}}</td>-->
+                </tr>
+                {% endfor %}
+               
+            </tbody>
+            
+        </table>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+    $('#example').DataTable();
+});
+</script>
+
+        {% endblock %}

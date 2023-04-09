@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dressing Tables</title>
+    {% load static %}
+    
+    <link rel="stylesheet" href="{%static 'shop/stylesheet.css' %}" />
+    <link rel="stylesheet" href="{%static 'shop/style_1.css' %}">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <a href="">
+                <img style="border-radius: 80px;" src="{%static 'shop/images/Logo.gif' %}" alt="" width="150px" ></a>
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="home">Home</a></li>
+                <li><a href="products">Products</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="contactus">Contact</a></li>
+                <li><a href="login">Login</a></li>
+        
+                <li><a href="rateus">Rate Us</a></li>
+                <!-- TODo: 22:20 -->
+              </ul>
+        </nav>
+        <a href="cart.html"
+        ><img src="{%static 'shop/images/cart2.png' %}"  alt="" width="30px" height="30px"
+        /></a>
+         <!---- <img
+            src="images/menu.png"
+            alt=""
+            class="menu-icon"
+            onclick="menutoggle()"
+          />-->
+        </div>
+       
+    <div class="small-container">
+      <div class="row row-7">
+        <h1>Dressing Tables</h1>
+        <select name="" id="">
+          <option value="">filter by</option>
+          <option value="">Sort by Price</option>
+          <option value="">Sort by Popularity</option>
+          <option value="">Sort by Rating</option>
+          <option value="">Sort by sales</option>
+        </select>
+      </div>
+    
+
+      <div class="row">
+        <div class="col-4">
+         
+         <a href="product-details.html">
+            <img src="{%static 'shop/images1/Dressing Tables/dres1.jpg' %}"alt=""/>
+            
+         </a>
+         
+          <h4>Dresser Table Quest</h4>
+          <button class="button" type="button">
+            <span class="buttontext">Add to Cart</span>
+            <span class="buttonicon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+          </button>
+          <br>
+          <br>
+          <button class="button" type="button">
+            <span class="buttontext">Add to wishlist</span>
+            <span class="buttonicon">
+              <ion-icon name="heart-circle-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+        
+          <p>$250.00</p>
+        </div>
+         
+        <div class="col-4">
+        
+          <a href="pd_armchair.html"><img src="{%static 'shop/images1/Dressing Tables/dres2.jpg' %}" alt="" />
+          </a>
+          <h4>Fresco Dresser Table</h4>
+          <button class="button" type="button">
+            <span class="buttontext">Add to Cart</span>
+            <span class="buttonicon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+          </button>
+          <br>
+          <br>
+          <button class="button" type="button">
+            <span class="buttontext">Add to wishlist</span>
+            <span class="buttonicon">
+              <ion-icon name="heart-circle-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$299.00</p>
+        </div>
+
+        <div class="col-4">
+        
+          <a href="pd_foyer.html"><img src="{%static 'shop/images1/Dressing Tables/dres3.jpg' %}" alt="" /></a>
+          <h4>Aberdeen Dressing Table</h4>
+          <button class="button" type="button">
+            <span class="buttontext">Add to Cart</span>
+            <span class="buttonicon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+          </button>
+          <br>
+          <br>
+          <button class="button" type="button">
+            <span class="buttontext">Add to wishlist</span>
+            <span class="buttonicon">
+              <ion-icon name="heart-circle-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+          </div>
+          <p>$150.00</p>
+        </div>
+
+        <div class="col-4">
+       
+          <a href="pd_futon.html"><img src="{%static 'shop/images1/Dressing Tables/dres4.jfif' %}" alt="" /></a>
+          <h4>Diva Dressing Table</h4>
+          <button class="button" type="button">
+            <span class="buttontext">Add to Cart</span>
+            <span class="buttonicon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+          </button>
+          <br>
+          <br>
+          <button class="button" type="button">
+            <span class="buttontext">Add to wishlist</span>
+            <span class="buttonicon">
+              <ion-icon name="heart-circle-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$299.00</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+        
+          <a href="pd_antique-table.html"><img src="{%static 'shop/images1/Dressing Tables/dres5.jpg' %}"alt="" /></a>
+          <h4>Virginia Dresser</h4>
+          <button class="button" type="button">
+            <span class="buttontext">Add to Cart</span>
+            <span class="buttonicon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+          </button>
+          <br>
+          <br>
+          <button class="button" type="button">
+            <span class="buttontext">Add to wishlist</span>
+            <span class="buttonicon">
+              <ion-icon name="heart-circle-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$100.00</p>
+        </div>
+
+        <div class="col-4">
+        
+          <a href="pd_modern-couch.html"><img src="{%static 'shop/images1/Dressing Tables/dres6.jpg' %}" alt="" /></a>
+          <h4>Trysil Dresser</h4>
+          <button class="button" type="button">
+            <span class="buttontext">Add to Cart</span>
+            <span class="buttonicon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+          </button>
+          <br>
+          <br>
+          <button class="button" type="button">
+            <span class="buttontext">Add to wishlist</span>
+            <span class="buttonicon">
+              <ion-icon name="heart-circle-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$500.00</p>
+        </div>
+
+        <div class="col-4">
+        
+          <a href="pd_toska-armchair.html"><img src="{%static 'shop/images1/Dressing Tables/dres7.jpg' %}" alt="" />
+            </a>
+          <h4>Sienna Dresser</h4>
+          <button class="button" type="button">
+            <span class="buttontext">Add to Cart</span>
+            <span class="buttonicon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+          </button>
+          <br>
+          <br>
+          <button class="button" type="button">
+            <span class="buttontext">Add to wishlist</span>
+            <span class="buttonicon">
+              <ion-icon name="heart-circle-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+         
+          </div>
+          <p>$350.00</p>
+        </div>
+        <div class="col-4">
+       
+          <a href="pd_wolfrokoko.html"><img src="{%static 'shop/images1/Dressing Tables/dres8.jpg' %}" alt="" /></a>
+          <h4>Chelsea Dressing Table</h4>
+          <button class="button" type="button">
+            <span class="buttontext">Add to Cart</span>
+            <span class="buttonicon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+          </button>
+          <br>
+          <br>
+          <button class="button" type="button">
+            <span class="buttontext">Add to wishlist</span>
+            <span class="buttonicon">
+              <ion-icon name="heart-circle-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$150.00</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+      
+          <a href="pd_comptable.html"><img src="{%static 'shop/images1/Dressing Tables/dres9.jpg' %}"alt="" /></a>
+          <h4>Square Dressing Table with mirror</h4>
+          <button class="button" type="button">
+            <span class="buttontext">Add to Cart</span>
+            <span class="buttonicon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+          </button>
+          <br>
+          <br>
+          <button class="button" type="button">
+            <span class="buttontext">Add to wishlist</span>
+            <span class="buttonicon">
+              <ion-icon name="heart-circle-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$90.00</p>
+        </div>
+
+        <div class="col-4">
+       
+          <a href="pd_tableshiny.html"><img src="{%static 'shop/images1/Dressing Tables/dres10.jpg' %}" alt="" /></a>
+          <h4>Ankhara Dressing Table with mirror</h4>
+          <button class="button" type="button">
+            <span class="buttontext">Add to Cart</span>
+            <span class="buttonicon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+          </button>
+          <br>
+          <br>
+          <button class="button" type="button">
+            <span class="buttontext">Add to wishlist</span>
+            <span class="buttonicon">
+              <ion-icon name="heart-circle-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$150.00</p>
+        </div>
+
+        <div class="col-4">
+       
+          <a href="pd_armchair2.html"><img src="{%static 'shop/images1/Dressing Tables/dres11.jpg' %}" alt="" /></a>
+          <h4>Wooden Dresser</h4>
+          <button class="button" type="button">
+            <span class="buttontext">Add to Cart</span>
+            <span class="buttonicon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+          </button>
+          <br>
+          <br>
+          <button class="button" type="button">
+            <span class="buttontext">Add to wishlist</span>
+            <span class="buttonicon">
+              <ion-icon name="heart-circle-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+          </div>
+          <p>$250.00</p>
+        </div>
+        <div class="col-4">
+   
+          <a href="pd_egtable.html"><img src="{%static 'shop/images1/Dressing Tables/dres12.jpg' %}" alt="" /></a>
+          <h4>Zinnia Dresser</h4>
+          <button class="button" type="button">
+            <span class="buttontext">Add to Cart</span>
+            <span class="buttonicon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </span>
+          </button>
+          <br>
+          <br>
+          <button class="button" type="button">
+            <span class="buttontext">Add to wishlist</span>
+            <span class="buttonicon">
+              <ion-icon name="heart-circle-outline"></ion-icon>
+            </span>
+          </button>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>$150.00</p>
+        </div>
+      </div>
+
+      <div class="page-btn">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>&#8594;</span>
+      </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+<!-- Footer -->
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      
+      <div class="footer-col-1">
+    
+        <a href="home">
+          <img style="border-radius: 80px;" src="{%static 'shop/images/Logo.gif' %}" alt="" width="150px" ></a>
+        <li><a href="home">Home</a></li>
+        <li><a href="contactus">Contact</a></li>
+       
+        <li>AR Based Furniture APP @2022</li>
+        
+      </div>
+      <div class="footer-col-2">
+        <h3>Contact</h3>
+        <ul>
+          <li>175 G. T. Road,<br>Baghbanpura, Lahore, Punjab 54000</li>
+          <li>+92-XXXXXXXX</li>
+          <li><a href="">ar.furnish.your.home@gmail.com</a></li>
+        </ul>
+        
+      </div>
+
+      <div class="footer-col-3">
+        <h3>About</h3>
+        <ul>
+          <li>An interactive web-based <br>application that will assist the user <br />
+            in finding the best product<br>(furniture) for their needs and also <br />
+            visualise their product in<br> personal space using Augmented Reality.</li>
+        </ul>
+      </div>
+
+      <div class="footer-col-4">
+        <h3>Follow us</h3>
+        <ul>
+          <li>Facebook</li>
+          <li>Twitter</li>
+          <li>Instagram</li>
+          <li>LinkedIn</li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+  </div>
+</div>
+
+<script>
+const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+accordionItemHeaders.forEach(accordionItemHeader => {
+accordionItemHeader.addEventListener("click", event => {
+
+accordionItemHeader.classList.toggle("active");
+const accordionItemBody = accordionItemHeader.nextElementSibling;
+if(accordionItemHeader.classList.contains("active")) {
+  accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+}
+else {
+  accordionItemBody.style.maxHeight = 0;
+}
+
+});
+});
+</script>
+    <!-- JS for Toggle menu -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+  </body>
+</html>

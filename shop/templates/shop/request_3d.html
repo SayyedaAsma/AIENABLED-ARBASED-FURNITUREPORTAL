@@ -1,0 +1,71 @@
+{% extends 'shop/basic.html' %}
+{% load static %}
+{% block additionalStyles %}
+<link rel="stylesheet" href="{%static 'shop/stylesheet1.css' %}" />
+<style type="text/css">
+  .container1{
+    border:3px solid black;
+    margin-right: 300px ;
+    margin-left: 300px ;
+    margin-top: 100px ;
+    margin-bottom: 100px ;
+  }
+  </style>
+
+{% endblock %}
+{% block title %} Title of admin{% endblock %}
+
+{% block body %}
+  <body>
+ 
+  <!--End of Tawk.to Script-->
+
+   
+        </div>
+
+
+        <!-- 3d requests -->
+   
+            <div class="container1" style="text-align: center; ">
+                <div class="title" style="color:black; justify-content:center; align-items:center; text-align: center;"><h1> 3d Models Requests</h1></div>
+                <!-- <form method="post" action="fair_requests.php" enctype="multipart/form-data"> -->
+                  {% if data %}
+                  {% for result in data %}
+                  {% csrf_token %}
+            
+                    <div class="user-details" style="height:100%; justify-content:center; align-items:center;">
+                      
+                      
+                          <div class= "card-title">
+                            <img src= '{{result.Image1}}' alt="" width="250px" height="250px">
+                          </div>
+                          <h4 class="card-title" style = 'text-transform: capitalize;'>{{result.Product_name}}</h4>
+                          <h4 class="card-title"style = 'text-transform: capitalize;'>{{result.s_ID.s_name}} is requesting to make 3d model</h4>
+                        
+                          
+                        
+                          <div class='clearfix'>
+                            <button type="button" class="btn btn-primary"><a href='uploadmodel/{{result.req_id}}'>Make 3d model</a></button>
+                              <button type="button" class="btn btn-primary"><a href='declinemodel/{{result.req_id}}'>decline</a></button>
+                      </div>
+                          
+                      </div>
+                      
+                     
+                    
+              
+
+
+                    {% endfor %}
+                    {% else %}
+                    <h4 class="card-title"style = 'text-transform: capitalize;'>no one is requesting to make 3d model</h4>
+                    {% endif %}
+
+             
+            </div>
+     
+        {% endblock %}  
+        
+
+
+    

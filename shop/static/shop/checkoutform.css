@@ -1,0 +1,298 @@
+:root {
+    --gray-1: #f2f2f2;
+    --gray-2: #a9a9a9;
+    --gray-3: #828282;
+    --gray-4: #4e5150;
+    --gray-5: #4f4f4f;
+    --gray-6: #333333;
+  
+    --gray-btn: #e0e0e0;
+  
+    --orange-1: #f2994a;
+    --orange-2: #f1892d;
+  }
+  * {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    text-decoration: none;
+    outline: none;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    min-height: 100vh;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  @media (min-width: 300px) {
+    main {
+      padding: 2rem 0.875rem 0;
+  
+      margin-bottom: 6.25rem;
+    }
+    main header h1 {
+      text-transform: capitalize;
+      line-height: 2rem;
+      color: var(--gray-4);
+  
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    main #shoppingForm {
+      margin: 1.35rem 0;
+    }
+    main .submitContainer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1.25rem;
+    }
+    main button[type="submit"] {
+      background: #3DED97;
+      color: white;
+  
+      text-transform: capitalize;
+      line-height: 1.21875rem;
+      font-size: 1rem;
+      font-weight: 600;
+  
+      height: 3.375rem;
+      width: 10.375rem;
+      border-radius: 0.75rem;
+    }
+  
+    /* ! SECTION ID=PRODUCTSFORM STYLE */
+    #productsForm {
+      display: grid;
+      grid-template-rows: 7.8125rem 7.8125rem 1fr;
+      row-gap: 1.8125rem;
+  
+      height: 30.5625rem;
+      padding: 1.875rem 1.75rem;
+      margin-bottom: 2.4375rem;
+  
+      background: var(--gray-1);
+      border-radius: 0.75rem;
+    }
+    #productsForm .productContainer {
+      display: grid;
+      width: 18.125rem;
+  
+      grid-template-columns: 1fr 1fr;
+    }
+    #productsForm .productImage img {
+      width: 7.8125rem;
+      height: 7.8125rem;
+  
+      object-fit: cover;
+      border-radius: 0.75rem;
+    }
+    /* * PRODUCT CONTENT STYLE */
+    #productsForm .productContent {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+  
+      padding-bottom: 0.3rem;
+    }
+    #productsForm .productContent h2 {
+      font-size: 0.75rem;
+  
+      text-transform: capitalize;
+      line-height: 0.9rem;
+      color: var(--gray-4);
+    }
+    #productsForm .productContent p {
+      font-size: 0.875rem;
+      color: var(--orange-1);
+  
+      display: flex;
+      align-items: center;
+  
+      margin-top: 0.625rem;
+    }
+    #productsForm .productContent p .oldPrice {
+      color: var(--gray-4);
+      font-size: 0.625rem;
+      text-decoration-line: line-through;
+  
+      margin-left: 0.5rem;
+    }
+    #productsForm .productContent .shoppingBtn {
+      width: 7.6875rem;
+      height: 3.125rem;
+  
+      border: 1px solid var(--gray-3);
+      border-radius: 0.75rem;
+      margin-top: auto;
+      padding: 0 0.625rem;
+  
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      font-size: 1rem;
+      color: var(--gray-6);
+    }
+    #productsForm .productContent .shoppingBtn .material-icons {
+      font-size: 0.9rem;
+      background: var(--gray-btn);
+      color: var(--gray-3);
+  
+      padding: 0.25rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+    }
+    /* * COSTS CONTAINER STYLE */
+    #costsContainer {
+      margin-top: auto;
+  
+      font-size: 0.875rem;
+      text-transform: capitalize;
+      color: var(--gray-6);
+    }
+    #costsContainer .costsPrice:first-child {
+      padding-bottom: 0.625rem;
+    }
+    #costsContainer .costsPrice {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      padding-top: 0.625rem;
+      border-top: 1px solid #bdbdbd;
+    }
+  
+    /* ! SECTION ID=CONTACTFORM STYLE */
+    #contactForm h2 {
+      font-size: 0.875rem;
+      color: var(--gray-6);
+  
+      margin-bottom: 0.75rem;
+    }
+    #contactForm .contactInfo {
+      font-size: 0.625rem;
+      color: var(--gray-5);
+    }
+    #contactForm .contactInfo.address {
+      margin-top: 1.8125rem;
+    }
+    #contactForm .contactInfo .infoInput,
+    #contactForm .contactInfo .infoInput span {
+      display: flex;
+      align-items: center;
+    }
+    #contactForm .contactInfo .infoInput {
+      margin-top: 0.2rem;
+      margin-bottom: 1rem;
+      font-size: 0.75rem;
+  
+      border: 1px solid var(--gray-3);
+      border-radius: 0.75rem;
+      padding: 0.625rem;
+      width: 100%;
+    }
+    #contactForm .contactInfo .infoInput input {
+      width: 100%;
+    }
+    #contactForm .contactInfo .infoInput input::placeholder,
+    #countryInput {
+      color: var(--gray-3);
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+    #contactForm .contactInfo .infoInput #fullNameInput::placeholder {
+      color: var(--gray-6);
+    }
+    #contactForm .contactInfo .infoInput .material-icons {
+      font-size: 0.75rem;
+      margin-right: 0.75rem;
+      color: var(--gray-3);
+    }
+    #contactForm .contactInfo .xHuyACks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1.5rem;
+  
+      width: 100%;
+    }
+    #contactForm .checkbox {
+      display: flex;
+      align-items: center;
+    }
+    #contactForm .checkbox input {
+      width: 1rem;
+      height: 0.95rem;
+    }
+    #contactForm .checkbox span {
+      font-size: 0.625rem;
+      font-weight: 600;
+      color: var(--gray-5);
+  
+      margin-left: 0.5rem;
+    }
+    #countryInput {
+      background: white;
+      width: 100%;
+    }
+  
+    /* ! FOOTER STYLE */
+    footer {
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.875em;
+      font-weight: 600;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-2);
+  
+      margin-top: auto;
+      margin-bottom: 1.25rem;
+    }
+    footer a {
+      color: var(--gray-2);
+    }
+  }
+  @media (min-width: 1000px) {
+    main {
+      padding: 4rem 8rem 0;
+    }
+    main .submitContainer {
+      margin-top: 1.5rem;
+    }
+    article {
+      display: grid;
+      grid-template-columns: 22rem 22rem;
+      column-gap: 4rem;
+    }
+    #productsForm {
+      grid-column-start: 2;
+      /* height: 25rem; */
+    }
+    #contactForm {
+      grid-row-start: 1;
+    }
+  }
+  @media (min-width: 1200px) {
+    main {
+      padding: 4rem 15rem 0;
+    }
+    article {
+      grid-template-columns: 1fr 1fr;
+    }
+    #contactForm {
+      /* max-width: 29rem; */
+    }
+    #productsForm {
+      /* max-width: 24rem; */
+    }
+  }

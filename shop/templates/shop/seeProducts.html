@@ -1,0 +1,225 @@
+{% extends 'shop/basicseller.html' %}
+{% load static %}
+{% block additionalStyles %}
+<!--
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+--->
+
+<link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<style>
+    .containersee-product{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right:10%;
+    margin-left:10%;
+}
+    .see-product{
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    #search{
+        text-align: center;
+        color: black;
+    }
+    .table{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .table th{
+        text-align: center;
+        color: black;
+    }
+    .table td{
+        text-align: center;
+        color: black;
+    }
+    .table tr{
+        text-align: center;
+        color: black;
+    }
+    .table td a{
+        color: white;
+    }
+    .table td a:hover{
+        color: white;
+    }
+    .table td button{
+        color: white;
+    }
+    .table td button:hover{
+        color: white;
+    }
+    .table td button a{
+        color: white;
+    }
+    .table td button a:hover{
+        color: white;
+    }
+    .table td button a:visited{
+        color: white;
+    }
+    .table td button a:active{
+        color: white;
+    }
+    .table td button a:focus{
+        color: white;
+    }
+    .table td button a:link{
+        color: white;
+    }
+    .table td button a:visited{
+        color: white;
+    }
+    .table td button a:active{
+        color: white;
+    }
+    .table td button a:focus{
+        color: white;
+    }
+    .table td button a:link{
+        color: white;
+    }
+    .table td button a:visited{
+        color: white;
+    }
+    .table td button a:active{
+        color: white;
+    }
+    .table td button a:focus{
+        color: white;
+    }
+    .table td button a:link{
+        color: white;
+    }
+    .table td button a:visited{
+        color: white;
+    }
+    .table td button a:active{
+        color: white;
+    }
+    .table td button a:focus{
+        color: white;
+    }
+    .table td button a:link{
+        color: white;
+    }
+    .table td button a:visited{
+        color: white;
+    }
+    .table td button a:active{
+        color: white;
+    }
+    .table td button a:focus{
+        color: white;
+    }
+   .table td button{
+    height: 60px;
+    width: 100px;
+   }
+</style>
+{% endblock %}
+
+
+{% block body %}
+  <body>
+
+    
+
+    <footer class="containersee-product">
+
+        <div id="search">
+            <h2><b>See Products</b></h2>
+        </div>
+      
+        <div class="table-responsive" width="1000px">
+            <table class="table">
+             
+                <tr>
+                    <th width="10%">product id</th>
+                    <th width="10%">seller id</th>
+                    <th width="15%">Product name</th>
+                    <th width="10%">Color</th>
+                    <th width="10%">Price</th>
+                    <th width="10%">Dimensions</th>
+                   
+                    <th width="15%">category</th>
+                    <th width="15%">status</th>
+                    <th width="10%">image paths</th>
+                    <th width="25%">Actions</th>                
+                  </tr>
+                  {% for result in data%}
+                  <tr>
+                    <td>{{result.p_ID}}</td>
+                    <td>{{result.s_ID_id}}</td>
+                    <td>{{result.p_name}}</td>
+                    <td>{{result.p_color}}</td>
+                    <td>{{result.p_price}}</td>
+                    <td>{{result.p_dimensions}}</td>
+                    <td>{{result.p_category}}</td>
+                    <td>{{result.p_status}}</td>
+                    <td>{{result.p_images}}</td>
+                    
+                 
+                    <td class="d-flex">
+                      <button type="button" class="btn btn-primary ml-2"><a href="addProduct">addProduct</a></button>
+                      <button type="button" class="btn btn-success ml-2"><a href="editProduct/{{result.p_ID}}">Update</a></button>
+                      <button type="button" class="btn btn-danger ml-2"><a href="delete/{{result.p_ID}}">Delete</a></button>
+                      
+                    {% if result.p_threedlinks %}
+                      <button type="button" class="btn btn-primary ml-2"><a href="{{result.p_threedlinks}}">View in AR</a></button>
+                    {% else %}
+                    <button type="submit" class="btn btn-primary ml-2"><a href="request3d/{{result.p_ID}}">Request3d</a></button>
+
+                    {% endif %}
+                    
+                    
+                    </td>      
+                  </tr>
+                  {% endfor %}
+                 
+            </table>
+          </div>
+    </footer>
+
+ <!--
+<script>
+  const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+  accordionItemHeaders.forEach(accordionItemHeader => {
+  accordionItemHeader.addEventListener("click", event => {
+
+    accordionItemHeader.classList.toggle("active");
+    const accordionItemBody = accordionItemHeader.nextElementSibling;
+    if(accordionItemHeader.classList.contains("active")) {
+      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+    }
+    else {
+      accordionItemBody.style.maxHeight = 0;
+    }
+    
+  });
+});
+</script>
+-->   
+
+
+
+    {% endblock %}   
+
+    
+
+  

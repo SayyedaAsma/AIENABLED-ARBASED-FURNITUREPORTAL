@@ -1,0 +1,129 @@
+{% extends 'shop/basicseller.html' %}
+{% load static %}
+{% block additionalStyles %}
+<link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+         /* Consolidate duplicate rules */
+  .containersee-product{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right:10%;
+    margin-left:10%;
+}
+
+  
+  /* Avoid using !important */
+  .d-flex button {
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    text-align: center; 
+    margin: 10px;
+  }
+      
+  </style>
+
+
+
+
+
+{% endblock %}
+<body>
+{% block body %}
+    
+
+    <footer class="containersee-product">
+
+        <div id="search">
+            <h2><b>Order Records</b></h2>
+
+        </div>
+        <!-- <div class="row search-box">
+            <div class="col-md-8"></div>
+            <div class="col-md-4 ">Search: 
+                <input type="text">
+            </div>
+        </div> -->
+       
+        
+        <div class="table-responsive">
+            <table class="table">
+          <tr>
+            <th width="10%">order id</th>
+            <th width="10%">product id</th>
+            <th width="10%">seller id</th>
+            <th width="15%">Product name</th>
+            <th width="15%">Product price</th>
+            <th width="15%">Quantity</th>
+            <th width="15%">Buyer's Name</th>
+            <th width="15%">Buyer's Address</th>
+            <th width="15%">Buyer's Contact Number</th>
+            <th width="20%">Shipping Status</th>
+            <th width="20%">City</th>
+            <th width="20%">Country</th>
+            <th width="25%">Actions</th>   
+          </tr>
+          {% for result in data%}
+          <tr>
+            <td>{{result.o_id}}</td>
+            <td>{{result.p_ID_id}}</td>
+            <td>{{result.s_ID_id}}</td>
+            <td>{{result.Product_name}}</td>
+            <td>{{result.Product_price}}</td>
+            <td>{{result.quantity}}</td>
+            <td>{{result.Buyers_name}}</td>
+            <td>{{result.BuyersAddress}}</td>
+            <td>{{result.BuyersContactNumber}}</td>
+            <td>{{result.Status}}</td>
+            <td>{{result.City_name}}</td>
+            <td>{{result.Country_name}}</td>
+
+            <td class="d-flex">
+              <button type="button" class="btn btn-success ml-2"><a href="shipped/{{result.o_id}}">Shipped</a></button>
+              <button type="button" class="btn btn-success ml-2"><a href="delivered/{{result.o_id}}">Delivered</a></button>
+      
+            
+            
+            </td>  
+          </tr>
+
+
+          {% endfor %}
+         
+        </table>
+        </div>
+    </footer>
+   
+    <script>
+      const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+      accordionItemHeaders.forEach(accordionItemHeader => {
+      accordionItemHeader.addEventListener("click", event => {
+    
+        accordionItemHeader.classList.toggle("active");
+        const accordionItemBody = accordionItemHeader.nextElementSibling;
+        if(accordionItemHeader.classList.contains("active")) {
+          accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+        }
+        else {
+          accordionItemBody.style.maxHeight = 0;
+        }
+        
+      });
+    });
+    </script> 
+
+    
+
+{% endblock %}
+   
+  </body>
+
+

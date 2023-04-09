@@ -1,0 +1,216 @@
+{% extends 'shop/basic_buyer.html' %}
+
+{% block title %} Title of buyer{% endblock %}
+{% load static %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% block additionalStyles %}
+
+
+
+<link rel="stylesheet" href="{%static 'shop/stylesheet.css' %}" />
+<style>
+
+.card {
+    
+    border: none;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-radius: 4px;
+}
+
+
+.dots{
+
+    height: 4px;
+  width: 4px;
+  margin-bottom: 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.badge{
+
+        padding: 7px;
+        padding-right: 9px;
+    padding-left: 16px;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+}
+
+.user-img{
+
+    margin-top: 4px;
+}
+
+.check-icon{
+
+    font-size: 17px;
+    color: #c3bfbf;
+    top: 1px;
+    position: relative;
+    margin-left: 3px;
+}
+
+.form-check-input{
+    margin-top: 6px;
+    margin-left: -24px !important;
+    cursor: pointer;
+}
+
+
+.form-check-input:focus{
+    box-shadow: none;
+}
+
+
+.icons i{
+
+    margin-left: 8px;
+}
+.reply{
+
+    margin-left: 12px;
+}
+
+.reply small{
+
+    color: #b7b4b4;
+
+}
+
+
+.reply small:hover{
+
+    color: green;
+    cursor: pointer;
+
+}
+
+
+.rate {
+   
+ 
+    display: inline-block;
+    height: 46px;
+    padding: 0 10px;
+    width: 212px;
+    margin-left: 0%;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+
+}
+.column {
+    float: left;
+    height: 46px;
+    padding: 0 10px
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.rate .half:before{
+  content: "\f089";
+  position: absolute;
+  padding-right: 0;
+}
+</style>
+
+{% endblock %}
+
+
+
+<body>
+  {% block body %}
+           <div class="containerr">
+
+               <div class="contactform">
+                   <h2>Would you like to rate us?</h2>
+                   <form action="{% url 'rateus' %}" method="post">
+                    {%csrf_token%}
+                   <div class="formbox">
+                       <div class="inputbox w50">
+                        <div class="inputbox w100 m-t-30">
+                            <span style="font-family: Arial, Helvetica, sans-serif; font-size: small;">Your name</span>
+                            <input type="text" id="Reviewer_name" name="Reviewer_name" width="30%" style="font-family: Arial, Helvetica, sans-serif; font-size: small;">
+                        </div>
+                        <div class="inputbox w100 m-t-20">
+                            <span>rate us</span>
+                           
+                        </div>
+                        
+                        <div class="rate">
+							<input type="radio" name="rating" id="rating10" value="5" required /><label for="rating10" title="5"></label>
+							
+							<input type="radio" name="rating" id="rating8" value="4" required /><label for="rating8" title="4"></label>
+							<input type="radio" name="rating" id="rating6" value="3" required /><label for="rating6" title="3"></label>
+							<input type="radio" name="rating" id="rating4" value="2" required /><label for="rating4" title="2"></label>
+							<input type="radio" name="rating" id="rating2" value="1" required /><label for="rating2" title="1"></label>
+							
+						</div>
+                       </div>
+
+                       <div class="inputbox w100 m-t-20">
+                           <span>Any comments?</span>
+                           <textarea name="comments" id="comments" cols="30" rows="10" required></textarea>
+                           <button class="btn btn"type="submit" value="submit">submit</button>
+
+                       </div>
+                    </form>
+                   </div>
+
+
+
+                   <button class="btn btn-primary"type="submit" value="submit"><a href="comments">See All Reviews</a></button>
+
+                  
+                    
+                </div>
+                  
+    
+
+
+                   
+               </div>
+           </div>
+<!--    <div style="padding: 40px;" class="containerr">-->
+
+    </div>
+  {% endblock %}
+
+
+
+
+</body>
+</html>

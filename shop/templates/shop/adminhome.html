@@ -1,0 +1,43 @@
+{% extends 'shop/basic.html' %}
+{% load static %}
+{% block additionalStyles %}
+<style>
+
+</style>
+
+
+{% endblock %}
+{% block title %} Title of admin{% endblock %}
+
+{% block body %}
+
+
+
+<div class="containers">
+
+<div class="container-1" >
+ 
+    <div class="row">
+        <div class="col">
+      <h5 class="card-title">All Sellers Info</h5>
+    
+      <a href="sellerinfo" class="btn btn-primary">See Sellers Info</a>
+    </div>
+    </div>
+  </div>
+
+
+
+  <div class="container-2 text-center" >
+ 
+    <div class="row">
+        <div class="col">
+      <h5 class="card-title">Sellers Who Requested 3D Models</h5>
+ 
+      <a href="threedinfo" class="btn btn-primary">See Sellers Who Requested 3D Models</a>
+    </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

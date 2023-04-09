@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% extends 'shop/basic_buyer.html' %}
+
+{% block title %} Title of buyer{% endblock %}
+{% load static %}
+
+
+{% block additionalStyles %}
+<link
+      rel="stylesheet"
+      type="text/css"
+      href="{%static 'shop/style.css' %}"
+    />
+
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap"
+      rel="stylesheet"
+    />
+
+{% endblock %}
+
+
+
+  </head>
+  <body>
+   {% block body %}
+    <div style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center;">
+      <div class="cont">
+        <div class="form sign-in">
+          <h2>LogIn As Admin</h2>
+          <form action="{% url 'loginadmin' %}" method="post">
+            {%csrf_token%}
+            <label for="username" class="control-label"
+              >username
+              <!-- <span>username</span>-->
+              <input type="text" name="username" id="username" />
+            </label>
+            <label for="password" class="control-label"
+              >password
+              <!-- <span>Password</span>-->
+              <input type="password" name="password" id="password" />
+            </label>
+            <button class="submit" type="submit">Sign In</button>
+
+            <p class="forgot-pass">
+           <!-- <a href="forgotpassword">Forgot Password ?</a>-->
+            </p>
+          </form>
+          <!---->
+          <div class="social-media">
+            <ul>
+              <li><img src="{%static 'shop/images/facebook.png' %} " /></li>
+              <li><img src="{%static 'shop/images/twitter.png' %} " /></li>
+              <li><img src="{%static 'shop/images/linkedin.png' %} " /></li>
+              <li><img src="{%static 'shop/images/instagram.png' %} " /></li>
+              <li><img src="{%static 'shop/images/google.png' %} " /></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sub-cont">
+          <div class="img">
+            <div class="img-text m-up">
+              <h2></h2>
+              <p>
+                
+              </p>
+            </div>
+            <div class="img-text m-in">
+              <h2>One of us?</h2>
+              <p>
+             
+              </p>
+            </div>
+            
+          </div>
+          <div class="form sign-up">
+          
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+      
+ 
+
+    <script type="text/javascript" src="{%static 'shop/script.js' %}"></script>
+    {% endblock %}
+
+
+  </body>
+</html>

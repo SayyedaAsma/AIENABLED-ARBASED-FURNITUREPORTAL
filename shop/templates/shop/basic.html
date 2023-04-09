@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    {% load static %}
+    
+    <link rel="stylesheet" href="{%static 'shop/stylesheet.css' %}" />
+    <link rel="stylesheet" href="{% static 'shop/css/admin.css' %}"/>
+    {% block additionalStyles %}
+
+    {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+    </style>
+
+</head>
+
+<body>
+<!--{% load static %}-->
+
+    <!--  navigation bar code starts here-->
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="adminhome">Furnish Your Homes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="sellerinfo">All Sellers Info<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="threedinfo">Sellers Who Requested 3D Models</a>
+                </li>
+              
+            </ul>
+           
+
+                <a href="logoutadmin"><button class="btn btn-success my-2 my-sm-0" type="submit">logout</button></a>
+           
+    
+            
+          
+        </div>
+    </nav>
+  
+
+<!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+    <!--nav bar code ends here-->
+    {% block body %}
+    
+    
+    {% endblock %}
+
+   <!-- Footer -->
+   <div class="footer">
+    <div class="container">
+      <div class="row">
+        
+        <div class="footer-col-1">
+      
+          <a href="home">
+            <img style="border-radius: 80px;" src="{%static 'shop/images/Logo.gif' %}" alt="" width="150px" ></a>
+          <li><a href="home">Home</a></li>
+          <li><a href="contactus">Contact</a></li>
+        
+          <li>AR Based Furniture APP @2022</li>
+          
+        </div>
+        <div class="footer-col-2">
+          <h3>Contact</h3>
+          <ul>
+            <li>175 G. T. Road,<br>Baghbanpura, Lahore, Punjab 54000</li>
+            <li>+92-XXXXXXXX</li>
+            <li><a href="">ar.furnish.your.home@gmail.com</a></li>
+          </ul>
+          
+        </div>
+  
+        <div class="footer-col-3">
+          <h3>About</h3>
+          <ul>
+            <li>An interactive web-based <br>application that will assist the user <br />
+              in finding the best product<br>(furniture) for their needs and also <br />
+              visualise their product in<br> personal space using Augmented Reality.</li>
+          </ul>
+        </div>
+  
+        <div class="footer-col-4">
+          <h3>Follow us</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>LinkedIn</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </div>
+ 
+</body>
+</html>
+
+<script>
+const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+accordionItemHeaders.forEach(accordionItemHeader => {
+accordionItemHeader.addEventListener("click", event => {
+
+  accordionItemHeader.classList.toggle("active");
+  const accordionItemBody = accordionItemHeader.nextElementSibling;
+  if(accordionItemHeader.classList.contains("active")) {
+    accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+  }
+  else {
+    accordionItemBody.style.maxHeight = 0;
+  }
+  
+});
+});
+</script>

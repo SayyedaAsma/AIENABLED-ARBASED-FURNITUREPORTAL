@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buyer</title>
+
+
+    <!--<link rel="stylesheet" href="contactus.css">-->
+
+ 
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="{%static 'shop/stylesheet.css' %}" />
+    {% block additionalStyles %}
+    <style>
+     .dropdown-menu {
+  display: none;
+}
+.MenuItems ul li:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: var(--color-black);
+}
+.MenuItems ul li:hover .dropdown-menu ul {
+  display: block;
+  margin: 10px;
+}
+.MenuItems ul li:hover .dropdown-menu ul li {
+  width: 150px;
+  padding: 10px;
+}
+.dropdown-menu-1 {
+  display: none;
+}
+.dropdown-menu ul li:hover .dropdown-menu-1 {
+  display: block;
+  position: absolute;
+  left: 150px;
+  top: 0;
+  background-color: var(--color-black);
+}
+
+</style>
+    {% endblock %}
+           <!-- <script src="rellax.min.js"></script> -->
+    </head>
+
+
+
+
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="home">
+            <img style="border-radius: 80px;" src="{%static 'shop/images/Logo.gif' %}" alt="" width="150px" ></a>
+        </div>
+        <nav>
+          <ul id="MenuItems" class="MenuItems">
+            <li><a href="home">Home</a></li>
+            <li><a href="about">About</a></li>
+            
+         
+
+            <li><a href="rateus">Rate Us</a></li>
+            
+           
+            <li><a href="loginseller">login as seller</a></li>
+            <li><a href="loginadmin">login as admin</a></li>
+
+              
+            <!-- TODo: 22:20 -->
+          </ul>
+        </nav>
+        <a id="popcart">
+          <img src="{%static 'shop/images/cart2.png' %}"  alt="" width="30px" height="30px"/>
+          (<span id="cart">0</span>)
+          <div id="popcart-content"></div>
+        </a>
+</div>
+</div>
+
+</div>
+  {% block body %}
+
+
+  {% endblock %}
+
+
+</body>
+
+
+
+
+
+<div class="footer" style="margin-top: 500px;" >
+  <div class="container">
+    <div class="row">
+      
+      <div class="footer-col-1">
+        
+        <a href="home">
+          <img style="border-radius: 80px;" src="{%static 'shop/images/Logo.gif' %}" alt="" width="150px" ></a>
+        <li><a href="home">Home</a></li>
+        <li><a href="contactus">Contact</a></li>
+        <li><a href="blogs">Blogs</a></li>
+        <li>AR Based Furniture APP @2022</li>
+        
+      </div>
+      <div class="footer-col-2">
+        <h3>Contact</h3>
+        <ul>
+          <li>175 G. T. Road,<br>Baghbanpura, Lahore, Punjab 54000</li>
+          <li>+92-XXXXXXXX</li>
+          <li><a href="">ar.furnish.your.home@gmail.com</a></li>
+        </ul>
+        
+      </div>
+
+      <div class="footer-col-3">
+        <h3>About</h3>
+        <ul>
+          <li>An interactive web-based <br>application that will assist the user <br />
+            in finding the best product<br>(furniture) for their needs and also <br />
+            visualise their product in<br> personal space using Augmented Reality.</li>
+        </ul>
+      </div>
+
+      <div class="footer-col-4">
+        <h3>Follow us</h3>
+        <ul>
+          <li>Facebook</li>
+          <li>Twitter</li>
+          <li>Instagram</li>
+          <li>LinkedIn</li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+  </div>
+</div>
+</body>
+</html>

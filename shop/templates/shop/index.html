@@ -1,0 +1,278 @@
+{% extends 'shop/basic_buyer.html' %}
+
+{% block title %} Title of buyer{% endblock %}
+{% load static %}
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+{% block additionalStyles %}
+
+
+
+<style>
+ 
+</style>
+<!-- <script src="faq.js"></script> -->
+
+
+{% endblock %}
+<body>
+  {% block body %}
+        <div class="row">
+          <div class="col-2">
+            <h1>
+              Furnish Your Home!
+            </h1>
+            <p>
+               An interactive web-based application that will assist the user <br />
+              in finding the best product(furniture) for their needs and also <br />
+              visualise their product in personal space using Augmented Reality.
+            </p>
+            <a href="" class="btn">Explore Now &#8594;</a>
+          </div>
+          <div class="col-2">
+            <!-- <img src="images/image1.png" alt="" /> -->
+            <img src="{%static 'shop/images/img1.jpg' %} ">
+          </div>
+        </div>
+    </div>
+    </div>
+    
+
+
+
+    <!----- Featurd Products--------->
+    <div class="small-container">
+      <h2 class="title">One place for all your needs</h2>
+      <div class="row">
+        <div class="col-4">
+          <a href="Beds"><img src= "{%static 'shop/images/bed1.jpg' %} " alt="" height="400px" width="800px" /></a>
+          <h4>Beds</h4>
+        </div>
+
+        <div class="col-4">
+          <a href="sofas"><img src= "{%static 'shop/images/sofas.jpg' %} " alt="" height="400px" width="1200px" /></a>
+          <h4>Sofas</h4>
+        </div>
+<!--
+        <div class="col-4">
+          <a href="dinning_tables"><img src= "{%static 'shop/images/dinning-table.jpg' %} " alt=""  /></a>
+          <h4>Dinning Tables</h4>
+        </div>
+        -->
+
+        <div class="col-4">
+          <a href="chairs"><img src=  "{%static 'shop/images/chairs.jpg' %} " alt="" height="400px" width="1200px" /></a>
+          <h4>Chairs</h4>
+        </div>
+
+     
+
+        <div class="col-4">
+          <a href="table"><img src= "{%static 'shop/images/table.jpg' %} " alt="" height="400px" width="1200px" /></a>
+          <h4>Tables</h4>
+        </div>
+<!--
+        <div class="col-4">
+          <a href="dresser"><img src= "{%static 'shop/images/dressers.jpg' %} " alt=""  /></a>
+          <h4>Dressing Table</h4>
+        </div>
+
+        <div class="col-4">
+          <a href="cupboard"><img src= "{%static 'shop/images/cupboards.jpg' %} " alt=""  /></a>
+          <h4>Cupboard</h4>
+        </div>
+        -->
+        
+      </div>
+    </div>
+
+ 
+    <!-- Our services  -->
+        
+    <div class="categories">
+      <div class="small-container">
+        <h2 class="title">Our Services</h2>
+        <div class="row">
+          <div class="col-4">
+            
+            <h4>Augmented Reality</h4>
+            <img src= "{%static 'shop/images/service1.png' %}" alt=""  />
+          </div>
+         
+            <h4>Pricing Tool</h4>
+            <img src="{%static 'shop/images/service2.jpg' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="faq1">
+      <div class="faq">
+    <div class="categories">
+      <div class="small-container">
+        <h2 class="title">FAQ-Frequently Asked Questions</h2>
+      </div>
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            <h3>Do these prices include delivery also?</h3>
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Our delivery and installation services come free for serviceable pincodes ONLY! No additional charges for those. We will install it too, for you.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            <h3>What should I do if a transaction fails?</h3>
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Transactions could fail due to multiple reasons. Please check for the following:
+              1.	Information passed on to payment gateway is accurate i.e.: account details, billing address, password (for net banking)
+              2.	Your Internet connection is not disrupted in the process
+              If your account has been debited after a payment failure, it will be rolled back within 7 working days.
+             </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            <h3>Is it safe to use my credit card, debit card or net banking?</h3>
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Absolutely. Shopping with our website is completely safe.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            <h3>Can I return items purchased using a gift card?</h3>>
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              Yes, you can. If you return an item, the gift card amount will be credited back to your card.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-item-header">
+            <h3>What can I do if my product is damaged?</h3>
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              First off, apologies if that happens.
+              If you notice that you are facing issues with your furniture, please feel free to write to us at ar.furnish.your.home@gmail.com.
+              We will file a complaint on your behalf. In case your product(s) has crossed our warranty period, we can’t promise that we will replace or repair for you. 
+              However, do reach out to us and we’ll surely try to help as best as we can.
+             </div>
+          </div>
+        </div>
+
+
+
+      </div>
+      
+      </div>
+    </div>
+    </div>
+    </section>
+
+
+    <!------ Testimonial  ------>
+    <div class="testimonial">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-3">
+            <i class="fa fa-quote-left"></i>
+
+            <p>
+              I have never buy furniture online but this wesite is very beneficial and easy to use and moreover this website provides visuallization of product <br />
+              in our personal space.
+              
+            </p>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <img src="images/asma.jpg" alt="" />
+            <h3>Sayyeda Asma </h3>
+          </div>
+
+          <div class="col-3">
+            <i class="fa fa-quote-left"></i>
+
+            <p>
+              I want to say thanks for helping me out to buy furniture easily when i have no time to visit market. And furniture is set to our wall<br />
+              as shown in virtual reality. 
+            </p>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </div>
+            <img src="images/arooj.jpg" alt="" />
+            <h3>Arooj Naeem </h3>
+          </div>
+
+          <div class="col-3">
+            <i class="fa fa-quote-left"></i>
+
+            <p>
+            I want to say thanks for helping me out to buy furniture easily when i have no time to visit market. And furniture is set to our wall<br />
+              as shown in virtual reality. 
+            </p>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <img src="images/ahmad.jpg" alt="" />
+            <h3>Ahmad Malik</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script>
+      const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+      accordionItemHeaders.forEach(accordionItemHeader => {
+      accordionItemHeader.addEventListener("click", event => {
+    
+        accordionItemHeader.classList.toggle("active");
+        const accordionItemBody = accordionItemHeader.nextElementSibling;
+        if(accordionItemHeader.classList.contains("active")) {
+          accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+        }
+        else {
+          accordionItemBody.style.maxHeight = 0;
+        }
+        
+      });
+    });
+    </script>
+   
+  {% endblock %} 
+  </body>
+</html>
+

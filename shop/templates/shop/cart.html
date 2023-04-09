@@ -1,0 +1,83 @@
+{% extends 'shop/basicbuyer.html' %}
+{% load static %}
+{% block additionalStyles %}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--<link rel="stylesheet" href="contactus.css">-->
+
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/cart.css' %}">  
+    {% endblock %}
+    {% block body %}
+   
+
+              
+    <div class="containerr">
+
+        <div class="contactform">
+            <h2>Shopping Cart</h2>
+
+            <div class="formbox">
+                <div class=" d-flex">
+                    <img width="150" src="/images/bed.jpg" alt="">
+                    <div class="ml-37">
+                        <h3>King sized bed</h3> <br>
+                        <p><b>Price:</b> $200</p>
+                        <p><b>SKU:</b> FG020003741</p> <br>
+                        <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                        <input class="w-100p" type="number">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <hr class="mt-30">
+            <div class="formbox">
+                <div class=" d-flex">
+                    <img width="150" src="/images/chairs.jpg" alt="">
+                    <div class="ml-37">
+                        <h3>Fancy Chairs</h3> <br>
+                        <p><b>Price:</b> $200</p>
+                        <p><b>SKU:</b> FG020003741</p> <br>
+                        <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                        <input class="w-100p" type="number">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <hr class="mt-30">
+            <div class="formbox">
+                <div class=" d-flex">
+                    <img width="150" src="/images/table.jpg" alt="">
+                    <div class="ml-37">
+                        <h3>Round Table</h3> <br>
+                        <p><b>Price:</b> $200</p>
+                        <p><b>SKU:</b> FG020003741</p> <br>
+                        <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                        <input class="w-100p" type="number">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!--    <div style="padding: 40px;" class="containerr">-->
+
+    </div>
+
+
+    {% endblock %}
+
+   

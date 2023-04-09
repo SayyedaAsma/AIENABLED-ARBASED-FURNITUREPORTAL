@@ -1,0 +1,122 @@
+{% extends 'shop/basic_buyer.html' %}
+
+{% block title %} Title of buyer{% endblock %}
+{% load static %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+{% block additionalStyles %}
+
+
+<link rel="stylesheet" href="{%static 'shop/stylesheet.css' %}" />
+<style>
+  .containerr {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;}
+</style>
+
+{% endblock %}
+
+
+<body>
+    {% block body %}
+
+
+<body>
+
+    <div class="containerr">
+        <div class="contactinfo">
+            <div>
+                <h2>Contact info</h2>
+                <ul class="info">
+                    <li>
+                        <span>  <i class="material-icons" style="font-size:48px;color: white;">place</i></span>
+                        <br>
+                        <li>175 G. T. Road,<br>Baghbanpura, Lahore, Punjab 54000</li>
+                    </li>
+                    <li>
+                        <span>  <i class="material-icons" style="font-size:48px;color: white;">mail</i></span>
+                        <li><a href="">arfurnitureweb@gmail.com
+                        </a></li>
+                    </li>
+                    <li>
+                        <span>  <i class="material-icons" style="font-size:48px;color: white;">call</i></span>
+                            <li> 123456789</li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contactform">
+            <form action="" name="contactForm" method="POST" onsubmit="return validateForm()">\
+            {% csrf_token %}
+            <h2>Contact Us</h2>
+            <div class="formbox">
+               
+                <div class="inputbox w50">
+                  
+                    <span>Name</span> 
+                    <input  type="text" name="name" id="name" required>
+                </div>
+                <div class="inputbox w50">
+                    <span>Email</span>
+                    <input  type="text" name="email" id="email" required>
+                </div>
+                <div class="inputbox w50">
+                    <span>Mobile Number</span>
+                    <input  type="text" name="phone" id="phone" required>
+                </div>
+                <div class="inputbox w100">
+                    
+                    <span>write your message</span> 
+                    <textarea name="message" class="field" id="message" cols="30" rows="10" required></textarea>
+               
+                </div>
+                <button type="button" value="submit">submit</button>
+            </form>
+            </div>
+        </div>
+   
+    </div>
+    
+
+
+    <script>
+        function validateForm(){
+            let name = document.forms['contactForm']['name'].value;
+            let email = document.forms['contactForm']['email'].value;
+            let phone = document.forms['contactForm']['phone'].value;
+            let message = document.forms['contactForm']['message'].value;
+      
+            if (name == '' || hasNumber(name)){
+                alert('Name must be filled out and must only contain letters');
+                return false;
+            } else if (email == '' && phone == ''){
+                alert('Email or phone must be filled out');
+                return false;
+            } else if (!(email.includes('@'))){
+                alert('Email does not seem to be valid');
+                return false;
+            }else if (isNaN(phone)){
+                alert('Phone number seems to contain letters');
+                return false;
+            } else if (message == ''){
+                alert('Message must be filled out');
+                return false;
+            } else {
+                // confirm or cancel
+                return confirm('Do you really want to sent the message?')
+            }
+        }
+      
+        function hasNumber(myString) {
+            return /\d/.test(myString);
+        }
+      </script>
+
+
+    {% endblock %}
+</body>
+</html>

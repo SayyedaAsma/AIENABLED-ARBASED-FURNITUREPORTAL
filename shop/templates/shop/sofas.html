@@ -1,0 +1,430 @@
+
+
+ {% extends 'shop/basic_buyer.html' %}
+
+{% block title %} Title of buyer{% endblock %}
+{% load static %}
+
+    
+
+
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    {% block additionalStyles %}
+    <link rel="stylesheet" href="{%static 'shop/stylesheet.css' %}" />
+    <link rel="stylesheet" href="{%static 'shop/style_1.css' %}">
+    <style>
+      .small-container {
+  /* max-width: 1080px; */
+  max-width: 88%;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+  border: darkcyan;
+}
+
+.button {
+display:inline-block;
+height: 50px;
+width:100%;
+max-width: 200%;
+padding: 0;
+background:#3DED97;
+border: none;
+outline: none;
+border-radius: 5px;
+overflow: hidden;
+font-size: 16px;
+font-weight: 200;
+cursor: pointer;
+
+}
+.button:hover{
+  background:green;
+
+}
+.button:active{
+  background: #3DED97;
+}
+
+.buttontext,
+.buttonicon{
+  display: inline-block;
+ align-items: center;
+ padding: 0 37px;
+ color:white;
+ height:100%
+}
+
+.buttonicon{
+  font-size: 1.5em;
+  padding-top: 10px;
+  width:30%;
+  background: rgba(172, 47, 120, 0.8);
+ 
+}
+.rating .fa {
+  color:darkblue;
+}
+.page-btn {
+ 
+ margin-top: 10%;
+  margin-left: 40%;
+}
+.page-btn span {
+  display: inline-block;
+  border: 4px solid #3DED97 ;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.page-btn span:hover {
+  background: darkcyan;
+  color: #fff;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+select[name="order_by"] {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+option {
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+}
+
+
+</style>
+    
+
+
+{% endblock %}
+
+
+
+   
+    
+  </head>
+
+  <body>
+    {% block body %}
+
+
+        
+        </div>
+       
+        <div class="small-container">
+          <div class="row row-7">
+            <h1>Sofas</h1>
+            <form method="get" action="{% url 'sofas' %}">
+              <select name="order_by">
+                <option value="highest">Price high to low</option>
+                <option value="lowest">Price low to high</option>
+              </select>
+              <button type="submit" style="background-color: rgb(59, 59, 163);color:white;width:70px; height: 35px;border-radius: 1px;">Sort</button>
+            </form>
+          </div>
+        </div>
+    
+
+      <div class="row">
+        
+        {% for result in data %}
+          <div class="col-4">
+            <a href="product-details">
+            <h4 id='imagespr{{forloop.counter}}'>
+              <img src= '{{result.p_images}}' alt="" width="250px" height="250px">
+            </h4>    
+            </a>
+             
+            <h4 class="card-title" id="namepr{{forloop.counter}}">
+              {{result.p_name}}
+            </h4>
+            <span id="divpr{{forloop.counter}}" class="divpr">
+              <button id="pr{{forloop.counter}}" class="button cart" type="button">
+                <span class="buttontext">Add to Cart</span>
+                <span class="buttonicon">
+                  <ion-icon name="cart-outline"></ion-icon>
+                </span>
+              </button>
+            </span>
+            
+            <br>
+            <br>
+
+            <br>
+            {% if result.p_threedlinks %}
+            <button class="button" type="button">
+              <a href="{{result.p_threedlinks}}">View in AR</a>
+         
+            </button>
+  
+  
+            {% endif %}
+     
+       
+            
+            <p id='pricepr{{forloop.counter}}'>
+              {{result.p_price}}
+            </p>
+          </div>
+           
+        {% endfor %}
+      </div>
+       
+
+      <div class="page-btn">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>&#8594;</span>
+      </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+
+
+<script>
+const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+accordionItemHeaders.forEach(accordionItemHeader => {
+accordionItemHeader.addEventListener("click", event => {
+
+accordionItemHeader.classList.toggle("active");
+const accordionItemBody = accordionItemHeader.nextElementSibling;
+if(accordionItemHeader.classList.contains("active")) {
+  accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+}
+else {
+  accordionItemBody.style.maxHeight = 0;
+}
+
+});
+});
+</script>
+    <!-- JS for Toggle menu -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+    
+ 
+    <script>
+      console.log('working')
+      if(localStorage.getItem('cart') == null){
+        var cart = {};
+        }
+        else
+        {
+        cart = JSON.parse(localStorage.getItem('cart'));
+        document.getElementById('cart').innerHTML = Object.keys(cart).length;
+        }
+      //jQuery starts here//
+      // If the add to cart button is clicked, add/increment the item
+      //$('.cart').click(function() {
+        $('.divpr').on('click', 'button.cart', function(){
+        var idstr = this.id.toString();
+        if (cart[idstr] != undefined) {
+          cart[idstr].quantity = cart[idstr].quantity + 1;
+        } else {
+          cart[idstr] = {
+            name: document.getElementById('name' + idstr).innerHTML,
+            quantity: 1,
+            //image: document.getElementById('images' + idstr).getAttribute('src'),
+            price: parseFloat(document.getElementById('price' + idstr).innerHTML.replace('$', ''))
+          };
+        }
+        
+        
+      
+        updateCart(cart);
+        
+    });
+    // Get the cart element
+var popcart = document.getElementById("popcart");
+
+// Get the cart content element
+var popcartContent = document.getElementById("popcart-content");
+
+// Add event listener to show the popover when cart is clicked
+popcart.addEventListener("click", function() {
+  popcartContent.style.display = "block";
+});
+
+// Add event listener to hide the popover when clicked outside
+document.addEventListener("click", function(event) {
+  var isClickInside = popcart.contains(event.target);
+  if (!isClickInside) {
+    popcartContent.style.display = "none";
+  }
+});
+
+
+
+    //Add Popover to cart
+    $('#popcart').popover();
+    updatePopover(cart);
+    function updatePopover(cart)
+    {
+        console.log('We are inside updatePopover');
+        var popStr = "";
+        popStr = popStr + "Cart for your items<br>\n";
+        var i = 1;
+        for (var item in cart){
+          // Define popStr variable
+        var img = document.getElementById('images' + item).innerHTML;
+        if (img) {
+          img = img.replace(/height=".*?"/g, 'height="50px"');
+          img = img.replace(/width=".*?"/g, 'width="50px"'); // replace height attribute with 100px
+        }
+        var deleteBtnID = 'delete_' + item;
+        /*popStr += "<div style='display: inline-block; vertical-align: middle;'>" + img + "</div>" +
+    "<div style='display: inline-block; vertical-align: middle;'>" + 
+    document.getElementById('name' + item).innerHTML + ": Qty: " + cart[item] + "</div>"+
+    "--Price:"+document.getElementById('price' + item).innerHTML+"<button  id='" + deleteBtnID + "' class='button delete' style='width:50px; height:50px;' data-item='" + item + "'>Delete</button>"+"<br>";
+    ;*/
+    popStr += "<div style='display: inline-block; vertical-align: middle;'>" + 
+      img + 
+      "</div>" +
+      "<div style='display: inline-block; vertical-align: middle;'>" + 
+      cart[item].name + ": Qty: " + cart[item].quantity + "</div>" +
+      "--Price: $" + cart[item].price.toFixed(2) + 
+      "<button  id='" + deleteBtnID + "' class='button delete' style='width:50px; height:50px;' data-item='" + item + "'>Delete</button>" + 
+      "<br>";
+    i = i+1;
+        } 
+        var buttonsDiv = document.createElement('div');
+// Set its innerHTML to the HTML string for the buttons
+buttonsDiv.innerHTML = "<a href='/shop/checkoutform'><button class='button' id ='checkout' style='width:150px;'>Checkout</button></a> <button class='button' onclick='clearCart()' id ='clearCart' style='width:150px;'>Clear Cart</button>";
+// Append the buttonsDiv element to popStr
+popcartContent.innerHTML = popStr + buttonsDiv.outerHTML;
+//document.getElementById('popcart').innerHTML =popStr+ buttonsDiv.outerHTML;
+//document.getElementById('popcart').insertAdjacentHTML('beforeend', popStr + buttonsDiv.outerHTML);
+
+//document.getElementById('popcart').setAttribute('data-content', popStr);
+//document.getElementById('popcart').getAttribute("data-content").appendChild(buttonsDiv.innerHTML);
+//document.querySelector("#popcart + .popover .popover-body").innerHTML += popStr + buttonsDiv.outerHTML;
+
+
+    console.log(popStr);
+    
+        //document.getElementById('popcart').setAttribute('data-content', popStr);
+       
+        $('#popcart').popover('show');
+    }
+    $(document).on('click', '.delete', function() {
+      var item = $(this).data('item');
+      delete cart[item];
+      updateCart(cart);
+      
+    });
+    /*
+    $('.popover').css({
+      'max-width': '200px',
+      'max-height': '600px',
+      'flex-direction': 'column',
+      'align-items': ' flex-end',
+      'background-color': '#ADD8E6',
+      'border': '1px solid #f9d276',
+      'position': 'absolute',
+      'top': '100%',
+      'left': 'auto',
+      'right':0,
+      'display': 'flex',
+      'padding': '10px'
+    
+      
+  });
+    $('.popover-content').css({
+      'border': '1px solid black',
+      'padding': '1px'
+  });*/
+  $('#popcart').css({
+    position: 'relative'
+  });
+  
+  $('#popcart-content').css( {
+    display: 'none',
+    position: 'absolute',
+    top: '30px',
+    background:'white',
+    right: '0',
+    padding: '10px',
+    color:'black',
+    border: '1px solid black',
+    shadow: '0px 0px 10px rgba(0, 0, 0, 0.5)',
+    width:'450px'
+  });
+  
+  function clearCart() {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    for (var item in cart) {
+        document.getElementById('div' + item).innerHTML = '<button id="' + item + '" class="button cart">Add To Cart</button>'
+    }
+    localStorage.clear();
+    cart = {};
+    updateCart(cart);
+  }
+  function updateCart(cart) {
+    for (var item in cart) {
+        var quantity = cart[item].quantity; // Access the quantity value from the item object
+        document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='button minus' style='width:30px;'>-</button> <span id='val" + item + "''>" + quantity + "</span> <button id='plus" + item + "' class='button plus'style='width:30px;'> + </button>";
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('cart').innerHTML = Object.keys(cart).length;
+    console.log(cart);
+    updatePopover(cart);
+}
+
+    // If plus or minus button is clicked, change the cart quantity as well as the display value
+    $('.divpr').on("click", "button.minus", function() {
+      a = this.id.slice(7, );
+      cart['pr' + a].quantity = cart['pr' + a].quantity - 1;
+      cart['pr' + a].quantity = Math.max(0, cart['pr' + a].quantity);
+      document.getElementById('valpr' + a).innerHTML = cart['pr' + a].quantity;
+      updateCart(cart);
+    });
+    $('.divpr').on("click", "button.plus", function() {
+      a = this.id.slice(6, );
+      cart['pr' + a].quantity = cart['pr' + a].quantity + 1;
+      document.getElementById('valpr' + a).innerHTML = cart['pr' + a].quantity;
+      updateCart(cart);
+    });
+    
+    </script>
+
+    
+    {% endblock %}
+  </body>
+</html>

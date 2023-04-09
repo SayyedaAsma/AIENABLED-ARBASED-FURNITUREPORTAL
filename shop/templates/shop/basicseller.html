@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AR Based Furniture Website</title>
+    {% load static %}
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+    <link rel="stylesheet" href="{%static 'shop/stylesheetseller.css' %}" />
+    <style>
+      .header{
+        margin-top: 0px;
+      }
+    </style>
+    <!-- <script src="faq.js"></script> -->
+   
+    {% block additionalStyles %}
+
+    {% endblock %}
+
+
+  </head>
+  <body>
+ 
+  <!--End of Tawk.to Script-->
+
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <a href="homepageSeller">
+              <img style="border-radius: 80px;" src="{%static 'shop/images/Logo.gif' %}" alt="" width="150px" ></a>
+          </div>
+          <nav>
+            <ul id="MenuItems">
+              {% if user.is_authenticated %}
+             
+              <li>{{ user.username }}</li>
+              <li><a href="homepageSeller">Home</a></li>
+
+              <li><a href=" {% url 'seeProducts' %}">Product Record</a></li>
+              <li><a href=" {% url 'pricingTool' %}">Pricing Tool</a></li>
+              <li><a href=" {% url 'orderRecords' %}">Order Records</a></li>
+              <li><a href=" {% url 'requestinfo' %}">Requests Info</a></li>
+              <li><a href=" {% url 'password_change' %}">change password</a></li>
+              <li><a href="{% url 'logoutseller' %}">Logout</a></li>
+          
+              {% endif %}
+              <!-- TODo: 22:20 -->
+            </ul>
+          </nav> 
+        </div>
+    </div>
+    </div>
+
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+      <strong>Message: </strong> {{message}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% block body %}
+    <!--for script tags--> 
+
+    
+    {% endblock %}
+  
+
+
+  </body>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      
+      <div class="footer-col-1">
+    
+        <a href="home">
+          <img style="border-radius: 80px;" src="{%static 'shop/images/Logo.gif' %}" alt="" width="150px" ></a>
+        <li><a href="home">Home</a></li>
+        <li><a href="contactus">Contact</a></li>
+        <li><a href="blogs">Blogs</a></li>
+        <li>AR Based Furniture APP @2022</li>
+        
+      </div>
+      <div class="footer-col-2">
+        <h3>Contact</h3>
+        <ul>
+          <li>175 G. T. Road,<br>Baghbanpura, Lahore, Punjab 54000</li>
+          <li>+92-XXXXXXXX</li>
+          <li><a href="">ar.furnish.your.home@gmail.com</a></li>
+        </ul>
+        
+      </div>
+
+      <div class="footer-col-3">
+        <h3>About</h3>
+        <ul>
+          <li>An interactive web-based <br>application that will assist the user <br />
+            in finding the best product<br>(furniture) for their needs and also <br />
+            visualise their product in<br> personal space using Augmented Reality.</li>
+        </ul>
+      </div>
+
+      <div class="footer-col-4">
+        <h3>Follow us</h3>
+        <ul>
+          <li>Facebook</li>
+          <li>Twitter</li>
+          <li>Instagram</li>
+          <li>LinkedIn</li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+  </div>
+</div>
+
+</body>
+</html>
+
+<script>
+const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+accordionItemHeaders.forEach(accordionItemHeader => {
+accordionItemHeader.addEventListener("click", event => {
+
+accordionItemHeader.classList.toggle("active");
+const accordionItemBody = accordionItemHeader.nextElementSibling;
+if(accordionItemHeader.classList.contains("active")) {
+  accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+}
+else {
+  accordionItemBody.style.maxHeight = 0;
+}
+
+});
+});
+</script>

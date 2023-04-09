@@ -1,0 +1,134 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>comment box</title>
+    {% extends 'shop/basic_buyer.html' %}
+
+    {% load static %}
+    
+    {% block title %} Title of buyer{% endblock %}
+    {% block additionalStyles %}
+    <style>
+    .comment-box {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 20%;
+        margin-right: 20%;
+      }
+      
+      .box-top {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      
+      .profile-image img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      
+      .Name strong {
+        font-weight: bold;
+        margin-right: 5px;
+      }
+      
+      .Name span {
+        font-size: 0.8em;
+        color: #666;
+      }
+      
+      .comment p {
+        margin-bottom: 0;
+      }
+
+    .rate {
+   
+ 
+   display: inline-block;
+   height: 46px;
+   padding: 0 10px;
+   width: 212px;
+
+}
+.rate:not(:checked) > input {
+   position:absolute;
+   top:-9999px;
+}
+.rate:not(:checked) > label {
+   float:right;
+   width:1em;
+   overflow:hidden;
+   white-space:nowrap;
+   cursor:pointer;
+   font-size:30px;
+   color:#ccc;
+}
+.rate i {
+   content: '★ ';
+   color:yellow
+}
+    </style>
+      
+    {% endblock %}
+  
+</head>
+
+    </style>
+
+<body>
+    {% block body %}
+    <h3 style="color:black;font-family: Arial, Helvetica, sans-serif;font-size: 70px;text-align: center; margin-top:5%;margin-bottom:5%;">All Reviews</h3>
+    
+    <section class="main" >
+        <div class="full-boxer">
+            {% for result in data %}
+            <div class="comment-box">
+                <div class="box-top">
+                    <div class="Profile">
+                    
+                        <div class="Name">
+                            <strong >{{result.Reviewer_name}}</strong>
+                            <span>@{{result.Reviewer_name}}</span>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <div class="comment">
+                    <p>
+                        {{result.comment}}
+                    </p>
+                </div>
+                <div class="rate">
+                    <i class="fa fa-star{% if result.rating < 1 %}-o {% endif %}" ></i>
+                    <i class="fa fa-star{% if result.rating < 2 %}-o {% endif %}" ></i>
+                    <i class="fa fa-star{% if result.rating < 3 %}-o {% endif %}" ></i>
+                    <i class="fa fa-star{% if result.rating < 4 %}-o {% endif %}" ></i>
+                    <i class="fa fa-star{% if result.rating < 5 %}-o {% endif %}" ></i>
+                    
+    
+                    
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+
+    </section>
+    {% endblock %}
+
+</body>
+</html>

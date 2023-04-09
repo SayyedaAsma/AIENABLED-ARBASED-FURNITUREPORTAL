@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.form{
+    background:white;
+}
+
+body{
+    background:white;
+
+}
+
+.row{
+    background: white;
+    border-radius: 30px;
+}
+img{
+    border-top-left-radius:30px;
+    border-bottom-left-radius: 30px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 70%;
+
+}
+.btn1{
+    border: none;
+    outline:none;
+    height:40px;
+    width:100%;
+    background: #3DED97;
+    color:white;
+    border-radius:40px;
+    font-weight:bold;
+
+}
+.btn1:hover{
+    background:white;
+    border:1px solid;
+    color:black;
+
+}
+.text-black{
+    color: black;
+}
+
+.control-label:after{ content:"*"; 
+}

@@ -1,0 +1,100 @@
+{% extends 'shop/basic.html' %}
+{% load static %}
+{% block additionalStyles %}
+<link rel="stylesheet" href="{%static 'shop/stylesheet1.css' %}" />
+<style type="text/css">
+   
+    
+  form .button{
+      height:100%;
+      align-content: center;
+      
+  }
+  .model{
+    margin-top:10%;
+   margin-bottom: 20%;
+  }
+
+  .button button{
+  height: 45px;
+      width: 30%;
+      outline: none;
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      border-radius: 5px;
+      background-color: #00007C;
+   
+ 
+  }
+  .button button:hover{
+      background-color:grey;
+      
+  }
+  </style>
+
+{% endblock %}
+{% block title %} Title of admin{% endblock %}
+
+
+  <body>
+    {% block body %}
+  <!--End of Tawk.to Script-->
+
+   
+
+  
+
+        <!--upload 3d--> 
+        <div class="model">
+        <form method="post" action="">
+            {% csrf_token %}
+        <div style="text-align: center;color: black; align-content: center;">
+          <h5>please carefully read the instructions By hitting on instruction button</h5>
+<button type='btn' style="align-content: center;">
+    <a href="https://docs.google.com/document/d/1cdotDRNWWnLfETI2YISb_JCWn0Z88hWbZL-DWL9NOzU/edit">Instructions</a>
+</button>
+
+          <br>
+          <br   
+            <label for="threedkinks" style="text-decoration: solid;">Enter the url for 3d model:</label>
+            <input type="text" id="threedlinks" name="threedlinks" style="text-align:center; color: black;"  > 
+        </div>
+        <br>
+        <br>
+        <center><div class="button" style="position: relative; align-self: center; align-items: center;">
+            <button type='submit'value="submit" style="align-content: center;" >submit</button>             
+        </div></center>
+      </div>
+      </form>
+  
+        {% endblock %}
+        
+
+
+    <!-- Footer -->
+    <script>
+      const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+      accordionItemHeaders.forEach(accordionItemHeader => {
+      accordionItemHeader.addEventListener("click", event => {
+    
+        accordionItemHeader.classList.toggle("active");
+        const accordionItemBody = accordionItemHeader.nextElementSibling;
+        if(accordionItemHeader.classList.contains("active")) {
+          accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+        }
+        else {
+          accordionItemBody.style.maxHeight = 0;
+        }
+        
+      });
+    });
+    </script>
+
+     
+    </body>
+  </html>
+  
+  

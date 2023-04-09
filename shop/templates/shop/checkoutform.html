@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="{%static 'shop/checkoutform.css' %}" />
+
+    <title>Checkout Page</title>
+    
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f0f0f0;
+        margin: 0;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 36px;
+      }
+      form {
+        margin: 0 auto;
+        max-width: 800px;
+        padding: 20px;
+        background-color: lightwhite;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      fieldset {
+        margin-bottom: 20px;
+        border: none;
+      }
+      legend {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        font-size: 18px;
+      }
+      input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 18px;
+      }
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+      button[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      .alert {
+        background-color: #f44336;
+        color: #fff;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+    </style>
+    <main>
+      <header>
+        <h1>checkout</h1>
+      </header>
+      <form method="post" action="{% url 'checkout' %}">
+        {% csrf_token %}
+        <article id="shoppingForm">
+          <section id="productsForm" style="width:500px;">
+          <div >
+            <div id='cart' class="productContainer">
+              <ul class="list-group" id="items">
+              </ul>
+            </div>
+          </div>
+            
+            <div id="costsContainer">
+              <div class="costsPrice">
+                <span>shipping</span>
+                <span>$50</span>
+              </div>
+              <div class="costsPrice">
+                <span>total</span>
+                <span id="totalValue"></span>
+              </div>
+            </div>
+          </section>
+        
+          <section id="contactForm" style="width:400px;">
+              <fieldset>
+                <legend>Personal Information</legend>
+                <input type="hidden"  id="p_ID" name="p_ID" for="p_ID" required>
+                <input type="hidden"  id="s_ID" name="s_ID" for="s_ID" required>
+                <input type="hidden" value="Shipped "  id="ShippingStatus" name="ShippingStatus" for="ShippingStatus" required>
+                <label for="Product_name">Product Name:</label>
+                <input  type="text" for="Product_name" id="Product_name" name="Product_name" required readonly>
+                <label for="Product_price">Product Price:</label>
+                <input  type="text" for="Product_price" id="Product_price" name="Product_price" required readonly>
+                <label for="Quantity">Quantity:</label>
+                <input  type="text" for="quantity" id="quantity" name="quantity"  required readonly>
+
+                <label for="Buyers_name">Name:</label>
+                <input type="text" id="Buyers_name" name="Buyers_name" required>
+                <label for="BuyersContactNumber">Phone:</label>
+                <input type="tel" id="BuyersContactNumber" name="BuyersContactNumber" required>
+              </fieldset>
+              <fieldset>
+                <legend>Shipping Address</legend>
+                <label for="BuyersAddress">Address:</label>
+                <input type="text" id="BuyersAddress" name="BuyersAddress" required>
+                <label for="City_name">City:</label>
+                <input type="text" id="City_name" name="City_name" required>
+                <label for="Country_name">Country:</label>
+                <select id="Country_name" name="Country_name" required>
+                  <option value="">Select Country</option>
+                  <option value="UK">Pakistan</option>
+                  <option value="USA">USA</option>
+                  <option value="Canada">Canada</option>
+                  <option value="UK">UK</option>
+                </select>
+                <input type="checkbox" name="saveInformation" id="saveInformation" />
+                <span>Save this information for next time</span>
+              </div>
+              <div class="submitContainer">
+                <button type="submit">Confirm</button>
+              </div>
+            
+          </section>
+        
+        </article>
+      </input>
+      </form>
+    </main>
+
+    
+    {%block js%}
+    <script>
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    } else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+    console.log(cart);
+    var sum = 0;
+    if ($.isEmptyObject(cart)) {
+        // If object is empty
+        mystr = "<p>Your cart is empty, please add some items before checking out ! </p>"
+        $('#items').append(mystr);
+    }
+
+    for (item in cart) {
+      let name = cart[item].name;
+      let qty = cart[item].quantity;
+      let price = cart[item].price;
+      let total=qty*price;
+        sum += qty;
+        console.log(name);
+        console.log(sum);
+        console.log(price);
+        mystr = `
+        <li class="list-group-item d-flex justify-content-between align-items-center" style="width:450px;">
+          <span class="badge badge-primary badge-pill">${qty}</span>
+          <span class="item-name">${name}</span>
+          <span class="item-price">${price}</span>
+          <span class="item-name">=</span>
+          <span class="item-total">${total}</span>
+        </li>
+    `;
+    
+
+      $('#items').append(mystr);
+      
+   }
+   let total1 = 0;
+    for (let item in cart) {
+        total1 += cart[item].quantity * cart[item].price+50;
+    }
+    total1=`<span>${total1}</span>`;
+    $('#totalValue').append(total1);
+
+      $('#items').css({
+        'display': 'grid',
+        'grid-template-columns': 'repeat(auto-fit, minmax(250px, 1fr))',
+        'grid-gap': '20px',
+        'list-style-type': 'none',
+        'padding': '0'
+      });
+
+      $('.list-group-item').css({
+        'background-color': 'white',
+        'border-radius': '10px',
+        'box-shadow': '2px 2px 5px rgba(0, 0, 0, 0.1)',
+        'padding': '20px'
+      });
+
+      $('.item-name').css({
+        'font-weight': 'bold',
+        'margin': '0 10px'
+      });
+
+      $('.item-price').css({
+        'font-weight': 'normal',
+        'margin': '0 10px'
+      });
+
+      $('.item-total').css({
+        'font-weight': 'bold',
+        'margin': '0 10px'
+      });
+
+      $('.badge').css({
+        'background-color': '#38c172',
+        'border-radius': '10px',
+        'color': '#fff',
+        'font-weight': 'bold',
+        'padding': '10px'
+      });
+
+//$('#itemsJson').val(JSON.stringify(cart));
+for(item in cart){
+  var productName = cart[item].name.trim().replace(/"/g, '');
+  
+  console.log(productName);
+  $('#Product_name').val(JSON.stringify(productName));
+}
+for(item in cart){
+  var quan = cart[item].quantity;
+  if(quan === ''){
+    quan = 0;
+  }
+  console.log(quan);
+  $('#quantity').val(quan);
+}
+for(item in cart){
+  var quan = cart[item].quantity;
+      var price = cart[item].price;
+      console.log(price);
+      total_price=price*quan;
+      $('#Product_price').val(total_price);}
+//items = items.filter(item => item.name !== product_name);
+
+// Set the updated list back to local storage
+//localStorage.setItem('cart', JSON.stringify(items));
+
+  {% if thank %}
+  console.log("alert");
+  alert('Thanks for ordering with us. Your order is {{id}}. Use it to track your order using our order tracker');
+  //localStorage.clear();
+  var keys = Object.keys(cart);
+
+// remove the last key from the cart object
+delete cart[keys[keys.length - 1]];
+
+// save the updated cart object back to local storage
+localStorage.setItem('cart', JSON.stringify(cart));
+  
+  document.location = "/shop/checkoutform";
+  {% endif %}
+  {% if error_msg %}
+    alert('{{ error_msg }}');
+    console.log("alert");
+  {% endif %}
+  
+    //document.getElementById('cart').innerHTML = sum;
+    </script>
+    {%endblock%}
+
+    <!--<script src="{%static 'shop/checkoutform.js'%}"></script>-->
+    </body>
+</html>

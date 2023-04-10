@@ -497,7 +497,7 @@ def password_reset_request(request):
 				messages.error(request, "Email address not found, please try again.")
 	else:
 		form = PasswordResetForm()
-	return render(request, "shop/password_reset.html", context={"form": form})
+	return render(request, "shop/password_reset_form.html", context={"form": form})
 
 
 def checkout(request):
